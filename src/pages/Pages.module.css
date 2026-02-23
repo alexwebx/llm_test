@@ -1,0 +1,80 @@
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px 44px;
+}
+
+.hero {
+  border: 1px solid #d4dced;
+  border-radius: 20px;
+  padding: 20px;
+  background: radial-gradient(circle at 0% 0%, #d3efff 0%, #f8fbff 48%, #fbf7ef 100%);
+}
+
+.heroTest {
+  border: 1px solid #d4dced;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: linear-gradient(120deg, #f3fbff, #f8f6ef);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #23557a;
+  margin: 0;
+}
+
+.action {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #12202f;
+  color: #fff;
+  text-decoration: none;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.card {
+  border: 1px solid #d7deec;
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+}
+
+.backLink {
+  color: #24557d;
+  text-decoration: none;
+}
+
+.summary {
+  color: #4e5667;
+}
+
+.sectionTitle {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  border-left: 4px solid #3d7398;
+  padding-left: 10px;
+  color: #163148;
+}
+
+.paragraph {
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #243449;
+  background: #ffffffd9;
+  border: 1px solid #d8e0ee;
+  border-radius: 12px;
+  padding: 10px 12px;
+}

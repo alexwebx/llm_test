@@ -9,9 +9,13 @@
 - `src/types/exercises.ts`: all exercise schemas and answer/result contracts.
 - `src/core/evaluate.ts`: deterministic evaluator with partial scoring (`0..1`).
 - `src/components/BaseExercise.tsx`: shared shell (header/body/footer/feedback).
-- `src/components/types/*`: specialized interactive bodies per exercise type.
+- `src/components/exercises/*`: specialized interactive bodies per exercise type.
 - `src/components/ExerciseRenderer.tsx`: type-to-component mapping.
 - `src/test/TestRunner.tsx`: test mode, reducer state, progress, final summary.
+
+## Exercise docs
+- Full exercise type reference: [docs/exercise-types.md](/Users/alex/Desktop/incubator/ai/testing/docs/exercise-types.md)
+- Use it as the first entry point for people or AI agents who need to understand schemas, answers, and evaluation contracts without scanning the whole codebase.
 
 ## Run locally
 1. `npm i`

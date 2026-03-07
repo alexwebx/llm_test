@@ -36,6 +36,7 @@ export function MatchPairsExerciseView({ exercise, mode, onResult }: Props) {
       mode={mode}
       state={feedback?.state ?? "pristine"}
       canSubmit={canSubmit}
+      feedback={feedback}
       onSubmit={submit}
       onReset={() => {
         setPairs(Object.fromEntries(exercise.leftItems.map((item) => [item.id, null])));

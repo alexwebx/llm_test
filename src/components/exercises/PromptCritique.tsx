@@ -1,25 +1,25 @@
 import { useMemo, useState } from "react";
 import { BaseExercise } from "../BaseExercise";
 import {
-  CaseStudyAnswer,
-  CaseStudyExercise,
   EvaluationResult,
-  ExerciseMode
+  ExerciseMode,
+  PromptCritiqueAnswer,
+  PromptCritiqueExercise
 } from "../../types/exercises";
 import { evaluateAnswer } from "../../core/evaluate";
 import styles from "./ExerciseTypes.module.css";
 
 interface Props {
-  exercise: CaseStudyExercise;
+  exercise: PromptCritiqueExercise;
   mode: ExerciseMode;
-  onResult?: (result: EvaluationResult, answer: CaseStudyAnswer) => void;
+  onResult?: (result: EvaluationResult, answer: PromptCritiqueAnswer) => void;
 }
 
-export function CaseStudyExerciseView({ exercise, mode, onResult }: Props) {
+export function PromptCritiqueExerciseView({ exercise, mode, onResult }: Props) {
   const [selected, setSelected] = useState<string[]>([]);
   const [feedback, setFeedback] = useState<EvaluationResult | null>(null);
 
-  const answer = useMemo<CaseStudyAnswer>(() => ({ selectedImprovementIds: selected }), [selected]);
+  const answer = useMemo<PromptCritiqueAnswer>(() => ({ selectedIssueIds: selected }), [selected]);
 
   const submit = () => {
     const result = evaluateAnswer(exercise, answer);
@@ -33,6 +33,7 @@ export function CaseStudyExerciseView({ exercise, mode, onResult }: Props) {
       mode={mode}
       state={feedback?.state ?? "pristine"}
       canSubmit={selected.length > 0}
+      feedback={feedback}
       onSubmit={submit}
       onReset={() => {
         setSelected([]);
@@ -40,28 +41,25 @@ export function CaseStudyExerciseView({ exercise, mode, onResult }: Props) {
       }}
     >
       <div className={`${styles.box} ${styles.warn}`}>
-        <strong>Scenario:</strong> {exercise.scenario}
-      </div>
-      <div className={styles.box}>
-        <strong>Bad prompt:</strong> {exercise.badPrompt}
+        <strong>Prompt draft:</strong> {exercise.promptDraft}
       </div>
       <div className={styles.stack}>
-        {exercise.improvements.map((item) => {
-          const checked = selected.includes(item.id);
+        {exercise.issues.map((issue) => {
+          const checked = selected.includes(issue.id);
           return (
-            <label key={item.id} className={styles.optionRow}>
+            <label className={styles.optionRow} key={issue.id}>
               <input
                 type="checkbox"
                 checked={checked}
                 onChange={() => {
                   setSelected((prev) =>
-                    prev.includes(item.id)
-                      ? prev.filter((id) => id !== item.id)
-                      : [...prev, item.id]
+                    prev.includes(issue.id)
+                      ? prev.filter((id) => id !== issue.id)
+                      : [...prev, issue.id]
                   );
                 }}
               />
-              <span>{item.label}</span>
+              <span>{issue.label}</span>
             </label>
           );
         })}

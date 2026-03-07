@@ -34,6 +34,7 @@ export function TrueFalseExerciseView({ exercise, mode, onResult }: Props) {
       mode={mode}
       state={feedback?.state ?? "pristine"}
       canSubmit={canSubmit}
+      feedback={feedback}
       onSubmit={submit}
       onReset={() => {
         setValue(null);

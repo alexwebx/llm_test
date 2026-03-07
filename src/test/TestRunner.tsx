@@ -118,6 +118,7 @@ export function TestRunner({ exercises, header }: Props) {
         {!done && currentExercise && (
           <>
             <ExerciseRenderer
+              key={currentExercise.id}
               exercise={currentExercise}
               mode="test"
               onResult={(result: EvaluationResult, _answer: ExerciseAnswer) => {

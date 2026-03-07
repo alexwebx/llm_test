@@ -34,6 +34,7 @@ export function FillTheBlankExerciseView({ exercise, mode, onResult }: Props) {
       mode={mode}
       state={feedback?.state ?? "pristine"}
       canSubmit={canSubmit}
+      feedback={feedback}
       onSubmit={submit}
       onReset={() => {
         setValues(Array(exercise.blanks.length).fill(""));

@@ -120,8 +120,15 @@ export interface SpotTheHallucinationExercise
   penaltyPerWrong?: number;
 }
 
+export type PromptBuilderBlockId =
+  | "role"
+  | "context"
+  | "constraints"
+  | "format"
+  | "examples";
+
 export interface PromptBuilderBlock {
-  id: "role" | "context" | "constraints" | "format" | "examples";
+  id: PromptBuilderBlockId;
   label: string;
   required: boolean;
   keywords: string[];
@@ -190,7 +197,7 @@ export interface SpotHallucinationAnswer {
 }
 
 export interface PromptBuilderAnswer {
-  blocks: Record<string, string>;
+  blocks: Partial<Record<PromptBuilderBlockId, string>>;
 }
 
 export interface PromptCritiqueAnswer {

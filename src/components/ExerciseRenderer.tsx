@@ -1,14 +1,14 @@
 import { EvaluationResult, Exercise, ExerciseAnswer, ExerciseMode } from "../types/exercises";
-import { CaseStudyExerciseView } from "./types/CaseStudy";
-import { FillTheBlankExerciseView } from "./types/FillTheBlank";
-import { MatchPairsExerciseView } from "./types/MatchPairs";
-import { MultipleChoiceExerciseView } from "./types/MultipleChoice";
-import { OrderStepsExerciseView } from "./types/OrderSteps";
-import { PromptBuilderExerciseView } from "./types/PromptBuilder";
-import { PromptCritiqueExerciseView } from "./types/PromptCritique";
-import { PromptSimulatorExerciseView } from "./types/PromptSimulator";
-import { SpotTheHallucinationExerciseView } from "./types/SpotTheHallucination";
-import { TrueFalseExerciseView } from "./types/TrueFalse";
+import { CaseStudyExerciseView } from "./exercises/CaseStudy";
+import { FillTheBlankExerciseView } from "./exercises/FillTheBlank";
+import { MatchPairsExerciseView } from "./exercises/MatchPairs";
+import { MultipleChoiceExerciseView } from "./exercises/MultipleChoice";
+import { OrderStepsExerciseView } from "./exercises/OrderSteps";
+import { PromptBuilderExerciseView } from "./exercises/PromptBuilder";
+import { PromptCritiqueExerciseView } from "./exercises/PromptCritique";
+import { PromptSimulatorExerciseView } from "./exercises/PromptSimulator";
+import { SpotTheHallucinationExerciseView } from "./exercises/SpotTheHallucination";
+import { TrueFalseExerciseView } from "./exercises/TrueFalse";
 
 interface Props {
   exercise: Exercise;
